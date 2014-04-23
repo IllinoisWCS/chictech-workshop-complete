@@ -5,7 +5,11 @@
 		<script>
 			function displayCaption()
 			{
-				alert("The Alma Mater just came back to campus this year! She was originally mint green due to copper oxidization, but has since been restored to its old color.");
+				document.getElementById('caption').innerHTML = "The Alma Mater is back on campus after being in restoration for a year!";
+			}
+			function stopDisplay()
+			{
+				document.getElementById('caption').innerHTML = "";
 			}
 		</script>
 	</head>
@@ -22,7 +26,8 @@
 		<!-- end navigation bar -->
 		<h1>The University of Illinois, Urbana-Champaign</h1>
 		<p>I'm currently a student here, studying Computer Science. It's a big change from my hometown, but so far I like it. :)</p>
-		<img src="almamater.jpg" width="960px" height="auto" alt="Alma Mater" onmouseover="displayCaption()"/>
+		<img src="almamater.jpg" width="960px" height="auto" alt="Alma Mater" onmouseover="displayCaption()" onmouseout="stopDisplay()"/>
+		<p id="caption"></p>
 		<p>Mouse over for a special message!</p>
 	</body>
 </html>

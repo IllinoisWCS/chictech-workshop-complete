@@ -2,6 +2,18 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<script>
+			function displayCool() 
+			{
+				var tableRows = 1;
+				document.getElementById('cool').innerHTML = “My table has “ + tableRows + “rows in it”;
+				var tableCells = document.getElementsByTagName('td');
+				var sentences = document.getElementById('sentences');
+				for (i = 0; i < tableCells.length; i++) {
+					sentences.innerHTML = sentences.innerHTML + “<p>Sentence!</p>”
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<!-- start navigation bar -->
@@ -22,5 +34,9 @@
 				<td><img src="pic4.jpg"/></td>
 			</tr>
 		</table>
+		<button type="button" onclick="displayCool()">Click Me!</button>
+		<div id="cool"></div>
+		<div id="sentences"></div>
+		
 	</body>
 </html>
