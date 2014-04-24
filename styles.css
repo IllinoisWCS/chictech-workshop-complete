@@ -3,7 +3,7 @@ body
 {
 	background-color: #EFEEEF;
 	min-height: 100%;
-	max-width: 960px;
+	width: 960px;
 }
 .body-center
 {
@@ -103,4 +103,16 @@ h2, h3, h4, h5, h6
 	border-style: dashed;
 	margin: 5px;
 	padding: 0px;
+}
+table
+{
+	width: 100%;
+}
+tr
+{
+	height: 400px;
+}
+td
+{
+	width: 20%;
 }
