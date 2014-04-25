@@ -3,23 +3,19 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles.css"/>
 		<script>
-			function displayCool() 
+			function displayNothing()
 			{
-				var tableRows = document.getElementsByTagName('tr').length;
-				if (tableRows === 1) 
+				var commentArea = document.getElementById("comment");
+				if (commentArea.innerHTML == "")
 				{
-					document.getElementById('cool').innerHTML = '<h3>My table has ' + tableRows + ' row in it</h3>';
+					commentArea.innerHTML = "<p>No comments.</p>";
 				}
-				else 
-				{
-					document.getElementById('cool').innerHTML = '<h3>My table has ' + tableRows + ' rows in it</h3>';
-				}
-				var tableCells = document.getElementsByTagName('td');
-				var sentences = document.getElementById('sentences');
-				for (i = 0; i < tableCells.length; i++) 
-				{
-					sentences.innerHTML = sentences.innerHTML + '<p>Come to Illinois!</p>';
-				}
+			}
+			function getComment()
+			{
+				var commentArea = document.getElementById("comment");
+				var comment = prompt("Add a comment!");
+				commentArea.innerHTML = commentArea.innerHTML + "<p>" + comment + "</p>";
 			}
 		</script>
 	</head>
@@ -42,9 +38,7 @@
 				<td><img src="pic4.jpg"/></td>
 			</tr>
 		</table>
-		<button type="button" onclick="displayCool()">Click Me!</button>
-		<div id="cool"></div>
-		<div id="sentences"></div>
-		
+		<div id="comment" onload="displayNothing()"></div>
+		<button type="button" onclick="getComment()">Leave a Comment</button>
 	</body>
 </html>
